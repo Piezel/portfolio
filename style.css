@@ -4,13 +4,20 @@
     box-sizing: border-box;
 }
 .light {
-    background-color: white;
-    color: black;
+    background-color: #fafafa;
+    color: #121212;
+}
+.light h3, .light h2{
+    color: #6A89A7;
+}
+.dark h3, .dark h2{
+    color: #88BDF2;
 }
 .dark {
     background-color: #121212;
-    color: white;
+    color: #fafafa;
 }
+
 html {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
@@ -22,13 +29,19 @@ body {
     flex-direction: column;
     display: flex;
     overflow-x: hidden;
+    transition: background-color 0.2s ease-in-out;
 }
 
 /* text decorations */
-.bigletter {
+.light .bigletter {
     font-size: xx-large;
     color: #6A89A7;
 }
+.dark .bigletter {
+    font-size: xx-large;
+    color: #88BDF2;
+}
+
 
 /* main text blocks */
 main {
@@ -105,7 +118,6 @@ main {
     border-radius: 0 0 20px 0;
 }
 .section h3 {
-    color: #6A89A7;
     text-transform: capitalize;
     font-size: 32px;
 }
@@ -127,8 +139,13 @@ header {
     height: 50px;
     position: sticky;
     top: 0;
+    transition: all 0.2s ease-in-out;
+}
+.light header {
     border-bottom: 1px lightgray solid;
-    transition: height 0.2s ease-in-out;
+}
+.dark header {
+    border-bottom: 1px #282828 solid;
 }
 .headercontent {
     display: flex;
@@ -151,8 +168,9 @@ header {
     margin-left: 30px;
     padding-right: 10px;
     border-right: rgba(56, 73, 89,0.5) 1px solid;
-    color: black;
     text-decoration: none;
+    background-color: transparent;
+    transition: border 0.2s ease-in-out;
 }
 .menucontent a:hover {
     color: #6A89A7;
@@ -168,11 +186,9 @@ header {
 }
 header:hover a {
     animation: fadein 0.5s ease-in-out;
-    transition: all 0.2s;
 }
 header:hover .themebutton {
     animation: fadein 0.5s ease-in-out;
-    transition: all 0.2s;
 }
 header:hover {
     height: 100px;
@@ -204,12 +220,12 @@ header:hover .menucontent {
 .menupart1 {
     width: 40px;
     height: 5px;
-    transition: width 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .menupart2 {
     width: 30px;
     height: 5px;
-    transition: width 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 header:hover .menupart1{
     width: 30px;
@@ -218,7 +234,10 @@ header:hover .menupart2{
     width: 40px;
 }
 .menulight {
-    background-color: black;
+    background-color: #121212;
+}
+.menudark {
+    background-color: #fafafa;
 }
 /* logo */
 .logo {
@@ -228,7 +247,4 @@ header:hover .menupart2{
     align-items: center;
     justify-content: center;
     margin-right: auto;
-    color: #6A89A7;
 }
-
-/* animation */
