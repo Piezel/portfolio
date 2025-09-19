@@ -1,61 +1,234 @@
-        *{
-            margin:0;
-        }
-        .light {
-            background-color: white;
-            color: black;
-        }
-        body {
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            display: flex;
-            overflow-x: hidden;
-        }
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            height: 50px;
-            width: 100%;
-            position: sticky;
-            top: 0;
-            border-bottom: 1px lightgray solid;
-        }
-        main {
-            width: 100%;
-            padding: 1%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        .section {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            border-radius: 20px;
-            background-color: rgba(162,199,216,0.25);
-            width: 40%;
-            padding: 20px;
-        }
-        .section h3 {
-            color: #6191a7;
-            text-transform: capitalize;
-            font-size: 32px;
-        }
-        footer {
-            display: flex;
-            width: 75%;
-            background-color: rgba(162, 199, 216,0.1);
-            height: 100px;
-            margin-bottom: 20px;
-            border-radius: 20px;
-        }
-        .menubutton {
-            width: 50px;
-            height: 50px;
-            background-color: black;
-        }
+/* main stuff (theme, body, etc.) */
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+.light {
+    background-color: white;
+    color: black;
+}
+.dark {
+    background-color: #121212;
+    color: white;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 30px;
+}
+body {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    flex-direction: column;
+    display: flex;
+    overflow-x: hidden;
+}
+
+/* text decorations */
+.bigletter {
+    font-size: xx-large;
+    color: #6A89A7;
+}
+
+/* main text blocks */
+main {
+    flex: 1;
+    width: 100%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+/* blocks */
+.section {
+    scroll-snap-align: start;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    /* background-color: rgba(162,199,216,0.25); */
+    width: 40%;
+}
+.mainsection {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: rgba(56, 73, 89,0.1);
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+}
+.splitsection {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+}
+.sectionleft {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 75%;
+    height: inherit;
+    border-radius: 20px 0 0 20px;
+    padding: 20px;
+    background-color: rgba(56, 73, 89,0.1);
+}
+.sectionright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 24%;
+    margin-left: 1%;
+    height: inherit;
+}
+.sectionblock {
+    padding: 5px;
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    flex-direction: column;
+    background-color: rgba(56, 73, 89,0.1);
+}
+.sectionblock:first-of-type {
+    border-radius: 0 20px 0 0;
+}
+.sectionblock:last-of-type {
+    margin-bottom: 0;
+    border-radius: 0 0 20px 0;
+}
+.section h3 {
+    color: #6A89A7;
+    text-transform: capitalize;
+    font-size: 32px;
+}
+
+/* footer */
+footer {
+    display: flex;
+    width: 100%;
+    background-color: rgba(56, 73, 89,0.1);
+    height: 100px;
+}
+
+/* Header and Nav */
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px lightgray solid;
+    transition: height 0.2s ease-in-out;
+}
+.headercontent {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+.menucontent {
+    display: none;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+/* nav buttons */
+.menucontent a {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+    padding-right: 10px;
+    border-right: rgba(56, 73, 89,0.5) 1px solid;
+    color: black;
+    text-decoration: none;
+}
+.menucontent a:hover {
+    color: #6A89A7;
+    border-right: 10px rgba(56, 73, 89,0.5) double;
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+header:hover a {
+    animation: fadein 0.5s ease-in-out;
+    transition: all 0.2s;
+}
+header:hover .themebutton {
+    animation: fadein 0.5s ease-in-out;
+    transition: all 0.2s;
+}
+header:hover {
+    height: 100px;
+}
+header:hover .menucontent {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    opacity: 1;
+}
+.themebutton {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+}
+/* menu button */
+.menubutton {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+.menupart1 {
+    width: 40px;
+    height: 5px;
+    transition: width 0.2s ease-in-out;
+}
+.menupart2 {
+    width: 30px;
+    height: 5px;
+    transition: width 0.2s ease-in-out;
+}
+header:hover .menupart1{
+    width: 30px;
+}
+header:hover .menupart2{
+    width: 40px;
+}
+.menulight {
+    background-color: black;
+}
+/* logo */
+.logo {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    color: #6A89A7;
+}
+
+/* animation */
