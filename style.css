@@ -3,15 +3,16 @@
     margin:0;
     box-sizing: border-box;
     text-align: center;
+    font-family: Verdana, sans-serif;
 }
 .light {
     background-color: #fafafa;
     color: #121212;
 }
-.light h3, .light h2{
+.light h3, .light h2,.light h4{
     color: #6A89A7;
 }
-.dark h3, .dark h2{
+.dark h3, .dark h2, .dark h4{
     color: #88BDF2;
 }
 .dark {
@@ -107,7 +108,7 @@ main {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: 5px;
     flex-direction: column;
     background-color: rgba(56, 73, 89,0.1);
@@ -284,5 +285,8 @@ header:hover .menupart2{
     .menucontent {
         flex-direction: column;
         align-items: flex-start;
+    }
+    footer {
+        height: 200px;
     }
 }
