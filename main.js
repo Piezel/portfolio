@@ -1,4 +1,5 @@
 const themebutton = document.querySelector("#themebutton")
+const header = document.querySelector("header")
 
 themebutton.addEventListener("click",()=>{
     const body = document.body

@@ -2,6 +2,7 @@
 *{
     margin:0;
     box-sizing: border-box;
+    text-align: center;
 }
 .light {
     background-color: #fafafa;
@@ -23,6 +24,7 @@ html {
     scroll-snap-type: y mandatory;
     scroll-padding-top: 30px;
 }
+
 body {
     min-height: 100vh;
     scroll-snap-align: start;
@@ -158,6 +160,8 @@ header {
     width: 100%;
     opacity: 0;
     transition: all 0.2s ease-in-out;
+    align-items: center;
+    justify-content: flex-start;
 }
 /* nav buttons */
 .menucontent a {
@@ -187,16 +191,14 @@ header {
 header:hover a {
     animation: fadein 0.5s ease-in-out;
 }
-header:hover .themebutton {
+header:hover .themebutton{
     animation: fadein 0.5s ease-in-out;
 }
 header:hover {
     height: 100px;
 }
-header:hover .menucontent {
+header:hover .menucontent{
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
     opacity: 1;
 }
 .themebutton {
@@ -247,4 +249,40 @@ header:hover .menupart2{
     align-items: center;
     justify-content: center;
     margin-right: auto;
+}
+/* mobile */
+
+@media screen and (max-width:1200px) {
+    .section {
+        width: 90%;
+    }
+    .sectionblock {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+    .sectionblock:first-of-type {
+        border-radius: 0;
+    }
+    .sectionblock:last-of-type {
+        margin-bottom: 0;
+        border-radius: 0 0 20px 20px;
+    }
+    .splitsection {
+        flex-direction: column;
+    }
+    .sectionleft {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+    }
+    .sectionright {
+        margin-left: 0;
+        width: 100%;
+    }
+    header:hover {
+        height: auto;
+    }
+    .menucontent {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
