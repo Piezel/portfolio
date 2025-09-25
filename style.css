@@ -296,3 +296,57 @@ header:hover .menupart2{
         height: 200px;
     }
 }
+/* animated background */
+.sky {
+    z-index: -1;
+    opacity: 0.1;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.star {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    animation: stars 3s linear infinite;
+}
+.dark .star {    
+    color: white;
+    text-shadow: 
+    0 5px 3px rgba(255, 255, 255, 1),
+    5px 0 3px rgba(255, 255, 255, 1),
+    0 -5px 3px rgba(255, 255, 255, 1),
+    -5px 0 3px rgba(255, 255, 255, 1)
+    ;
+}
+.light .star {
+    color: #121212;
+    text-shadow: 
+    0 5px 3px rgba(12, 12, 12, 1),
+    5px 0 3px rgba(12, 12, 12, 1),
+    0 -5px 3px rgba(12, 12, 12, 1),
+    -5px 0 3px rgba(12, 12, 12, 1)
+    ;
+}
+.star::before{
+    content: '';
+    width: 300px;
+    height: 1px;
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+}
+.light .star::before {
+    background: linear-gradient(90deg, #121212,transparent);
+}
+.dark .star::before {
+    background: linear-gradient(90deg, white,transparent);
+}
