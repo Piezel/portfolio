@@ -1,6 +1,30 @@
 const themebutton = document.querySelector("#themebutton")
 const header = document.querySelector("header")
 
+if(window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    const body = document.body
+    const themeAnimation = [
+        {transform: "rotateY(0)"},
+        {transform: "rotateY(360deg)"}
+    ]
+    const themeAnimationTiming = {
+        duration: 500,
+        iterations: 1,
+    }
+    let tab = document.querySelectorAll(".light")
+    let menubutton = document.querySelectorAll(".menulight")
+    tab.forEach((el,i)=>{
+        el.classList.remove("light")
+        el.classList.add("dark")
+    })
+    menubutton.forEach((el,i)=>{
+        el.classList.remove("menulight")
+        el.classList.add("menudark")
+    })
+    themebutton.innerHTML = '<i class="fa-regular fa-moon fa-xl"></i>'
+    themebutton.animate(themeAnimation,themeAnimationTiming)
+}
+
 themebutton.addEventListener("click",()=>{
     const body = document.body
     const themeAnimation = [

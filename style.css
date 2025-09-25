@@ -22,13 +22,10 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    scroll-padding-top: 30px;
 }
 
 body {
     min-height: 100vh;
-    scroll-snap-align: start;
     flex-direction: column;
     display: flex;
     overflow-x: hidden;
@@ -58,7 +55,6 @@ main {
 }
 /* blocks */
 .section {
-    scroll-snap-align: start;
     margin-bottom: 20px;
     display: flex;
     align-items: flex-start;
@@ -256,6 +252,16 @@ header:hover .menupart2{
 @media screen and (max-width:1200px) {
     .section {
         width: 90%;
+    }
+    .menucontent a {
+        border-left: rgba(56, 73, 89,0.5) 1px solid;
+        border-right: none;
+        padding-right: 0;
+        padding-left: 10px;
+    }
+    .menucontent a:hover {
+        border-left: 10px rgba(56, 73, 89,0.5) double;
+        border-right: none;
     }
     .sectionblock {
         margin-top: 5px;
