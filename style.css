@@ -240,7 +240,8 @@ header:hover .menupart2{
 }
 /* logo */
 .logo {
-    width: 100px;
+    width: auto;
+    padding-left: 1%;
     height: 50px;
     display: flex;
     align-items: center;
@@ -310,14 +311,14 @@ header:hover .menupart2{
     opacity: 0.1;
 }
 .light .sky {
-    opacity: 0.3;
+    opacity: 0.2;
 }
 .star {
     font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 20px;
