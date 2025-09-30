@@ -304,12 +304,13 @@ header:hover .menupart2{
     position: fixed;
     left: 0;
     top: 0;
+    overflow: hidden;
 }
 .dark .sky {
     opacity: 0.1;
 }
 .light .sky {
-    opacity: 0.15;
+    opacity: 0.3;
 }
 .star {
     font-size: 16px;
