@@ -54,7 +54,14 @@ main {
     flex-direction: column;
 }
 /* blocks */
+.dark .section {
+    background-color: #1212129c;
+}
+.light .section {
+    background-color: #fafafa9c;
+} 
 .section {
+    transition: background-color 0.2s ease-in-out;
     margin-bottom: 20px;
     display: flex;
     align-items: flex-start;
@@ -306,11 +313,6 @@ header:hover .menupart2{
     left: 0;
     top: 0;
     overflow: hidden;
-}
-.dark .sky {
-    opacity: 0.1;
-}
-.light .sky {
     opacity: 0.2;
 }
 .star {
