@@ -41,6 +41,10 @@ body {
     font-size: xx-large;
     color: #88BDF2;
 }
+.note {
+    color: #999999;
+    font-size: smaller;
+}
 
 
 /* main text blocks */
@@ -115,6 +119,16 @@ main {
     margin-bottom: 5px;
     flex-direction: column;
     background-color: rgba(56, 73, 89,0.1);
+}
+.sectionblock img {
+    max-width: 30%;
+    margin: 10px 0;
+}
+.light .sectionblock i {
+    color: #6A89A7;
+}
+.dark .sectionblock i {
+    color: #88BDF2;
 }
 .sectionblock:first-of-type {
     border-radius: 0 20px 0 0;
@@ -313,7 +327,7 @@ header:hover .menupart2{
     left: 0;
     top: 0;
     overflow: hidden;
-    opacity: 0.2;
+    opacity: 0.5;
 }
 .star {
     font-size: 16px;

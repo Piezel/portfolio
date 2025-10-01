@@ -33,16 +33,11 @@ const randomStars = () => {
             }
         ]
         const animtiming = {
-            duration: random(1000,3000),
+            duration: random(500,3000),
             iterations: Infinity,
         }
         el.animate(fallingStar,animtiming)
     })
 }
 
-window.addEventListener("resize",e=>{
-    randomStars()
-})
-
 randomStars()
-
