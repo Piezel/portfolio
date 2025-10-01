@@ -1,5 +1,5 @@
 const sky = document.querySelector(".sky")
-const numOfStars = 50
+const numOfStars = 40
 
 const random = (min,max) => {
     return Math.random()*(max-min)+min

@@ -34,18 +34,43 @@ body {
 
 /* text decorations */
 .light .bigletter {
-    font-size: xx-large;
+    font-size: x-large;
     color: #6A89A7;
 }
 .dark .bigletter {
-    font-size: xx-large;
+    font-size: x-large;
     color: #88BDF2;
 }
 .note {
     color: #999999;
     font-size: smaller;
 }
-
+.buttonstyle {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin: 5px 0;
+    width: 70%;
+    border-radius: 10px;
+}
+.dark .buttonstyle {
+    background-color: #fafafa22;
+    color: #fafafa;
+    border: solid #fafafa33 1px;
+}
+.light .buttonstyle {
+    background-color: #12121222;
+    color: #121212;
+    border: solid #12121233 1px;
+}
+.dark .buttonstyle:hover {
+    background-color: #fafafa33;
+}
+.light .buttonstyle:hover {
+    background-color: #12121233;
+}
 
 /* main text blocks */
 main {
@@ -108,6 +133,47 @@ main {
     width: 24%;
     margin-left: 1%;
     height: inherit;
+}
+.projectsection {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    flex-direction: column;
+}
+.sectiontitle {
+    width: 100%;
+    height: auto;
+    background-color: rgba(56, 73, 89,0.1);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.sectionblocks {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.projectblock {
+    padding: 20px;
+    border-radius: 20px;
+    width: 49%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: rgba(56, 73, 89,0.1);
+    margin: 10px 0;
+}
+.projectblock div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: auto;
 }
 .sectionblock {
     padding: 5px;
@@ -306,6 +372,11 @@ header:hover .menupart2{
     .sectionright {
         margin-left: 0;
         width: 100%;
+    }
+    .projectblock {
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
     }
     header:hover {
         height: auto;
