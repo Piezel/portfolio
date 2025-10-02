@@ -214,6 +214,25 @@ footer {
     width: 100%;
     background-color: rgba(56, 73, 89,0.1);
     height: 100px;
+    padding: 10px 1%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+footer a {
+    text-decoration: none;
+}
+.light footer a {
+    color: #6A89A7;
+}
+.dark footer a {
+    color: #88BDF2;
+}
+.light footer a:hover {
+    border-bottom: 2px solid #6A89A7;
+}
+.dark footer a:hover {
+    border-bottom: 2px solid #88BDF2;
 }
 
 /* Header and Nav */
